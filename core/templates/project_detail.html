@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ project.title }} — Hossein{% endblock %}
+{% block content %}
+<section class="section">
+  <h1>{{ project.title }}</h1>
+  {% if project.image %}
+    <img class="full-img" src="{{ project.image.url }}" alt="{{ project.title }}">
+  {% endif %}
+  <p>{{ project.description|linebreaks }}</p>
+  {% if project.github_url %}<p>GitHub: <a href="{{ project.github_url }}">{{ project.github_url }}</a></p>{% endif %}
+  {% if project.demo_url %}<p>Demo: <a href="{{ project.demo_url }}">{{ project.demo_url }}</a></p>{% endif %}
+</section>
+{% endblock %}
